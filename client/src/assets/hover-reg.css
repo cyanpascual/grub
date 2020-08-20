@@ -1,0 +1,124 @@
+@charset "utf-8";
+body
+{
+	background-color: #535461;
+	opacity: 65;
+}
+
+#register{
+    background-color: #FFFFFF;
+    width: 672px;
+    height: 650px;
+    margin-top: 3%;
+    border-radius: 40px;
+}
+#register img{
+	width: 134.4px;
+	display: block;
+	clear: none;
+	height: auto;
+	padding: 5%;
+}
+#reg-logo{
+	color: #CCC;
+	height: 110px;
+	width: 80%;
+	border-bottom: 2px solid #B4E178;
+}
+#reg-text{
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #535461;
+    font-size: 24px;
+    letter-spacing: 1pt;
+}
+input[type=text], select {
+    width: 336px;
+    padding: 12px 12px;
+    margin: 8px 0;
+    display: inline-block;
+    background-color: #f0f9e4;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #535461;
+    font-weight: normal;
+    letter-spacing: 1pt;
+	border: none;
+}
+#reg-form form img {
+}
+
+input[type=password], select {
+    width: 336px;
+    padding: 12px 12px;
+    margin: 8px 0;
+    display: inline-block;
+    background-color: #f0f9e4;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #535461;
+    font-weight: normal;
+    letter-spacing: 1pt;
+	border: none;
+}
+input[type=submit]{
+	width: 336px;
+	padding: 12px 12px;
+	margin: 20px 0px;
+	display: inline-block;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #535461;
+	letter-spacing: 1pt;
+	border: none;
+	color: #f0f9e4;
+}
+input[type=submit]:hover{
+	background-color: #444053;
+}
+
+input[type=submitsm1]{
+	width: 310px;
+	padding: 12px 12px;
+	margin: 20px 0px;
+	display: inline-block;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #4267b2;
+	letter-spacing: 1pt;
+	border: none;
+	color: #fff;
+	text-align: center;
+}
+input[type=submitsm1]:hover{
+	background-color: #324d85;
+}
+input[type=submitsm2]{
+	width: 310px;
+	padding: 12px 12px;
+	margin: 4px 0px;
+	display: inline-block;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #a73427;
+	letter-spacing: 1pt;
+	border: none;
+	color: #fff;
+	text-align: center;
+}
+input[type=submitsm2]:hover{
+	background-color: #7d271d;
+}
+#reg-text-2{
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #535461;
+    font-size: 16px;
+    letter-spacing: 1pt;
+	padding: 18px;
+}
+#reg-text-2 a{
+	color:#87A95A;
+	text-decoration:none;
+}
+
+#reg-text-2 a:hover{
+	color: #B4E178;
+}
+#line{
+	width: 80%;
+	border: 1px solid #B4e178;
+}
