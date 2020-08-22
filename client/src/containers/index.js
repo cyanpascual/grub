@@ -8,7 +8,6 @@ import {
   browserHistory
 } from "react-router-dom";
 import { LoginContext } from '../context/LoginContext';
-
 import Login from './Login'
 import Landing from './Landing'
 import Marketplace from './Marketplace'
@@ -20,7 +19,7 @@ import Forum from './Forum'
 import Tutorials from './Tutorials'
 import PrivateRoute from './PrivateRoute'
 import Dashboard from './Dashboard'
-
+import 'fontsource-roboto';
 function App() {
   const {authed, setAuthed} = useContext(LoginContext);
 

@@ -8,6 +8,10 @@ function App() {
                 <div class="wrapper1">
                     <h3>Community <br/> Plantitas of UP Diliman</h3>
                     <h2>Location: Brgy: UP Campus, Quezon City</h2>
+                    <Member/>
+                    <Member/>
+                    <Member/>
+                    <Member/>
                 </div>
                 <div class="wrapper2">
                     <h3>- Community Leaderboard -</h3>

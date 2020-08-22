@@ -1,52 +1,240 @@
-import React,{useContext} from 'react';
-//import '../../../assets/iframe-style.css';
+import React,{useContext, useState} from 'react';
+import { Grid, Container, Typography, TextField, MenuItem, CssBaseline , Button } from '@material-ui/core';
 
 function App() {
+
+    const soil = [
+        {
+          value: 'Andy',
+          label: 'Andy',
+        },
+        {
+          value: 'Silt',
+          label: 'Silt',
+        },
+        {
+          value: 'Clay',
+          label: 'Clay',
+        },
+        {
+          value: 'Loamy',
+          label: 'Loamy',
+        },
+      ];
+
+const sunlight = [
+    {
+        value:'Direct',
+        label: 'Direct'
+    },
+    {
+        value:'Under Glass',
+        label: 'Under Glass'
+    },
+    {
+        value:'Windowsill',
+        label: 'Windowsill'
+    },
+    {
+        value:'Partial shade',
+        label: 'Partial shade'
+    },
+    {
+        value:'Full shade',
+        label: 'Full shade'
+    },
+    ]
+const cLevels = [
+    {
+        value:'Low',
+        label: 'Low'
+    },
+    {
+        value:'Medium',
+        label: 'Medium'
+    },
+    {
+        value:'High',
+        label: 'High'
+    }  
+]
+
+const climateChoices = [
+    {
+        value:'Hot',
+        label: 'Hot (Metro Manila)'
+    },
+    {
+        value:'Temperate',
+        label: 'Temperate (Tagaytay)'
+    },
+    {
+        value:'Cold',
+        label: 'Cold (Baguio)'
+    }  
+]
+
+const plantTypeChoices = [
+    {
+        value:'Organic',
+        label: 'Organic'
+    },
+    {
+        value:'Inorganic',
+        label: 'Inorganic'
+    } 
+]
+
+    var [soilType,setSoilType] = useState('Andy')
+    var [area,setArea] = useState(0)
+    var [sunlightType,setSunlightType] = useState('Direct')
+    var [timeAvailable,setTimeAvailable] = useState(0)
+    var [levelOfCommitment,setLevelOfCommitment] = useState('Low')
+    var [climate,setClimate] = useState('Cold')
+    var [budget,setBudget] = useState(0)
+    var [plantType,setPlantType] = useState('Organic')
+    var [showResult,setShowResult] = useState(false)
     return (
-        <body>
-<div class="wrapper">
-  <header>
-    <h1>Start your urban gardening journey!</h1>
-    <span></span>
-  </header>
-  
+        <>
+        <Grid container spacing={4}>
+           {showResult ? (
+            <>
+           <Grid item xs={12}><h1>Optimal plants to sow</h1></Grid>
+           <Grid item xs={12}><p>Lettuce <br/> Kale <br/> Basil</p></Grid>
+           <Grid item xs={12}><h1>Materials needed</h1></Grid>
+           <Grid item xs={12}><p>Hand trowel <br/>Pruning shears <br/>Spade <br/>Hoe <br/>Fork <br/>Shovel <br/>Rake</p></Grid>
+           </>
+           ): (
+            <>
+           <Grid item xs={12}>
+            <Typography variant="h3">Start your urban gardening journey!</Typography>
+            </Grid>
+            <Grid item xs={12}>
+                <TextField
+                label="Enter area"
+                value={area}
+                onChange={(e)=>{setArea(e.target.value)}}
+                ></TextField>
+            </Grid>
+            <Grid item xs={12}>
+                <TextField
+                style={{width:350}}
+                id="soilType"
+                select
+                label="Select Soil Type"
+                value={soilType}
+                onChange={(e)=>{setSoilType(e.target.value)}}
+                >
+                {soil.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                    </MenuItem>
+                ))}
+                </TextField>
+            </Grid>
+            <Grid item xs={12}>
+                <TextField
+                style={{width:350}}
+                id="sunlightLevel"
+                select
+                label="Select Sunlight Level"
+                value={sunlightType}
+                onChange={(e)=>{setSunlightType(e.target.value)}}
+                >
+                {sunlight.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                    </MenuItem>
+                ))}
+                </TextField>
+            </Grid>
+            <Grid item xs={12}>
+                <TextField
+                label="Enter Time Available (hrs/day)"
+                value={timeAvailable}
+                onChange={(e)=>{setTimeAvailable(e.target.value)}}
+                ></TextField>
+            </Grid>
+            <Grid item xs={12}>
+                <TextField
+                style={{width:350}}
+                id="lvlofc"
+                select
+                label="Select Level of Commitment"
+                value={levelOfCommitment}
+                onChange={(e)=>{setLevelOfCommitment(e.target.value)}}
+                >
+                {cLevels.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                    </MenuItem>
+                ))}
+                </TextField>
+            </Grid>
+            <Grid item xs={12}>
+                <TextField
+                style={{width:350}}
+                id="climate"
+                select
+                label="Select Climate"
+                value={climate}
+                onChange={(e)=>{setClimate(e.target.value)}}
+                >
+                {climateChoices.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                    </MenuItem>
+                ))}
+                </TextField>
+            </Grid>
+            <Grid item xs={12}>
+                <TextField
+                label="Budget"
+                value={budget}
+                onChange={(e)=>{setBudget(e.target.value)}}
+                ></TextField>
+            </Grid>
+            <Grid item xs={12}>
+                <TextField
+                style={{width:350}}
+                id="plant type"
+                select
+                label="Select Plant Type"
+                value={plantType}
+                onChange={(e)=>{setPlantType(e.target.value)}}
+                >
+                {plantTypeChoices.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                    </MenuItem>
+                ))}
+                </TextField>
+            </Grid>
+            <Grid item xs={12}>
+                    <Button onClick={()=>{
+                        setSoilType('Andy')
+                        setArea(0)
+                        setSunlightType('Direct')
+                        setTimeAvailable(0)
+                        setLevelOfCommitment('Low')
+                        setClimate('Cold')
+                        setBudget(0)
+                        setPlantType('Organic')
+                    }
+                    }>Reset</Button>
+                    <Button onClick={()=>{setShowResult(true)}}>Submit</Button>
+
+            </Grid>
+            </>)}
+
+    </Grid>
 
   
-  <div class="sections">
-    
-    <section class="active">
-      <input type="number" placeholder="Area available (in sqm.)" id="area" required/>
-		<input type="text" placeholder="Soil type" id="soil" required/>
-		{/* <!-- CYAN: Soil Type is dropdown; choices: sandy, silt, clay, loamy --> */}
-		
-		<input type="text" placeholder="Sunlight" id="sunlight" required/>
-		{/* <!-- CYAN: Sunlight is dropdown; choices: direct, under glass, windowsill, partial shade, full shade --> */}
-		
-		<input type="number" placeholder="Time available for gardening (hrs/day)" id="availableTime" required/>
-		
-		<input type="text" placeholder="Level of commitment" id="commLevel" required/>
-		{/* <!-- CYAN: Level of commitment is dropdown; choices: low, medium, high --> */}
-	
-		<input type="text" placeholder="Location" id="location" required/>
-		<input type="number" placeholder="Budget (in Php)" id="budget" required/>
-		<input type="text" placeholder="Plant type" id="plantType" required/>
-		{/* <!-- CYAN: Plant type is dropdown; choices: organic / inorganic --> */}
-            
-    </section>
-  </div>
+
+  </>
   
-  <footer>
-    <ul>
-      <li><span id="reset">reset</span></li>
-      <li><span id="submit"><a href="plantresult.html">Submit</a></span></li>
-    </ul>
-  </footer> 
-  
-</div>
-<div class="notification"></div>
 	
 
-</body>
     );
 }
 

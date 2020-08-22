@@ -1,5 +1,7 @@
 import React,{useContext} from 'react';
 import '../../../../assets/index.css';
+import PlantProfile from './components/PlantProfile'
+import CommonProblem from './components/CommonProblem'
 
 function App() {
     return (
@@ -13,13 +15,9 @@ function App() {
     
 	<section class="mainContent">
       <div class="productRow">
-        <article class="productInfo">
-          <div><img alt="sample" src="200x200.png"/></div>
-          <p class="price">Plant Name</p>
-          <p class="productContent">Location: Brgy. Kaligayahan <br/> Date Planted: 21 Aug 2020</p>
-          <input type="button" name="button" value="Germination Progress" class="buyButton2"/>
-			<input type="button" name="button" value="Harvest Progress" class="buyButton2"/>
-        </article>
+        <PlantProfile/>
+        <PlantProfile/>
+        <PlantProfile/>
       </div>
 
     </section>
@@ -42,7 +40,7 @@ function App() {
 
     </section>
 	</div></center>
-	<div id="welcome"><a href="iframe-5.html">Pest/Disease Identifier</a></div>
+	{/* <div id="welcome"><a href="iframe-5.html">Pest/Disease Identifier</a></div> */}
 </body>
     );
 }
