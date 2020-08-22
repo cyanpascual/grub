@@ -1,0 +1,108 @@
+@charset "utf-8";
+body
+{
+	background-color: #f0f9e4;
+}
+#h1 {
+    height: 50px;
+    width: auto;
+    margin-right: 60px;
+    margin-left: 60px;
+    position: relative;
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-bottom: 50px;
+    border-bottom: 3px solid #B4E178;
+    padding-right: 20px;
+}
+#h1 img {
+    width: 180px;
+}
+
+#menu ul {
+    float: right;
+    height: 25pt;
+    margin-top: -31px;
+    position: relative;
+}
+
+#menu ul li{
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16pt;
+    color: #535461;
+    line-height: 25pt;
+    display: inline;
+    margin-top: 0px;
+    margin-left: 100px;
+    margin-bottom: 0px;
+    text-align: center;
+    letter-spacing: 2pt;
+	padding-left: 40px;
+}
+
+#menu ul li a{
+	color:#535461;
+	text-decoration:none;
+}
+
+#menu ul li a:hover, #menu .dropdown:hover .dropbtn{
+	color:#87A95A;
+}
+.dropdown{
+	float: left;
+	overflow: hidden;
+}
+.dropdown .dropbtn{
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16pt;
+    color: #535461;
+    line-height: 25pt;
+    display: inline;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    letter-spacing: 2pt;
+	border: none;
+	background-color: #f0f9e4;
+	padding: 14px 16px;
+}
+.dd1-cont, .dd2-cont, .dd3-cont {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16pt;
+    color: #535461;
+    line-height: 25pt;
+	display: none;
+	position: absolute;
+	background-color: #ffffff;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  	z-index: 1;
+}
+.dd1-cont a, .dd2-cont a, .dd3-cont a{
+	float: none;
+	color: #535461;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+.dd1-cont a:hover, .dd2-cont a:hover, .dd3-cont a:hover{
+	background-color: #b4e178;
+}
+.dropdown:hover .dd1-cont, .dropdown:hover .dd2-cont, .dropdown:hover .dd3-cont{
+	display: block;
+}
+.copyright {
+	width: 90%;
+	float: bottom;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #444053;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	font-weight: lighter;
+	letter-spacing: 1pt;
+	border-top-width: 2px;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

@@ -296,15 +296,6 @@ body
     letter-spacing: 1pt;
     font-size: small;
 }
-.text_column a{
-	text-decoration: none;
-	color: #b4e178;
-	float: right;
-	margin-top: 9px;
-}
-.text_column a:hover{
-	color: #f0f9e4;
-}
 .gallery {
 	clear: both;
 	display: inline-block;
@@ -501,32 +492,17 @@ body
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
     letter-spacing: 1pt;
     line-height: 18px;
-	width: 100%;
 }
 /* Buy button for products in catalog */
 .productRow .productInfo .buyButton {
     position: relative;
     top: -48px;
-    width: 100%;
-    background-color:#87a85a;
+    width: 84%;
+    background-color: #87a95a;
     height: 35px;
     color: rgba(255,255,255,1.00);
     border-style: none;
     font-size: 14px;
-    text-transform: uppercase;
-    margin-top: 8px;
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    letter-spacing: 1pt;
-}
-.productRow .productInfo .buyButton2 {
-    position: relative;
-    top: -48px;
-    width: 100%;
-    background: linear-gradient(-90deg, #535461 50%, #87a85a 50%);
-    height: 35px;
-    color: rgba(255,255,255,1.00);
-    border-style: none;
-    font-size: 10px;
     text-transform: uppercase;
     margin-top: 8px;
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;

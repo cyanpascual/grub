@@ -5,34 +5,7 @@ function App() {
   return (
     <body style={{backgroundColor: "#f0f9e4"}}>
 	
-        <header class="main-h1" id="h1">
-            <a href="landing.html"><img src="grub-logo.png" alt=""/></a>
-            <div id="menu">
-                <ul>
-                <div class="dropdown">
-                    <button class="dropbtn">PROFILE</button>
-                    <div class="dd1-cont">
-                        <a href="username.html">User Name</a>
-                        <a href="dashboard.html">Dashboard</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn">COMMUNITY</button>
-                    <div class="dd2-cont">
-                        <a href="forum.html">Forum</a>
-                        <a href="tutorials.html">Video Library</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn">SHOP</button>
-                    <div class="dd3-cont">
-                        <a href="marketplace.html">Marketplace</a>
-                        <a href="orders.html">My orders</a>
-                    </div>
-                </div>
-            </ul>
-            </div>
-        </header>
+    
         
         <center><div id="welcome">MARKETPLACE</div></center>
         

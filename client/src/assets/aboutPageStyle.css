@@ -1,0 +1,231 @@
+@charset "utf-8";
+/* Global Styles */
+
+body .about{
+	margin-left: auto;
+	margin-right: auto;
+	width: 92%;
+	max-width: 960px;
+	padding-left: 2.275%;
+	padding-right: 2.275%;
+	background-color: #f0f9e4;
+}
+/* Header */
+header {
+	text-align: center;
+	display: block;
+}
+header .profileLogo .logoPlaceholder {
+	background-color: #f0f9e4;
+	width: 187px;
+	text-align: center;
+}
+header .logoPlaceholder span {
+	width: 80px;
+	height: 0px;
+	color: #f0f9e4;
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 53px;
+}
+header .profilePhoto {
+	background-color: #b4e178;
+	width: 259px;
+	border-radius: 50%;
+	height: 259px;
+	clear: both;
+}
+header .profileHeader h1 {
+    color: #444053;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 24px;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1pt;
+}
+header .profileHeader h3 {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1pt;
+	color: #535461;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+	margin-top: -10px;
+}
+hr {
+	background-color: #b4e178;
+	height: 2px;
+	border: none;
+}
+header .profileHeader p {
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1pt;
+    color: #535461;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-y: auto;
+}
+header .badgeBar {
+	text-align: center;
+	display: block;
+	margin-top: 30px;
+	clear: both;
+}
+header .badgeBar .badgeNav {
+	border-radius: 50%;
+	cursor: pointer;
+}
+header .badgeBar .badgeNav img{
+	width: 74px;
+	height: 74px;
+}
+header .badgeBar .badgeNav img:hover {
+	opacity: 0.7;
+}
+/* Main Content sections */
+.mainContent .section1 {
+	display: block;
+}
+.section1 .sectionTitle, .section2 .sectionTitle {
+    color: #444053;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1pt;	
+}
+.section1 .sectionTitleRule, .section2 .sectionTitleRule {
+	margin: 0 3% 0 0;
+	float: left;
+	clear: both;
+}
+.section1 .sectionTitleRule2, .section2 .sectionTitleRule2 {
+	background-color: #b4e178;
+	height: 2px;
+	padding: 0px;
+}
+.mainContent .section1 .section1Content {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1pt;
+	font-size: 14px;
+	font-weight: 300;
+	color: #535461;
+}
+.mainContent .section1 .section1Content span {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1pt;
+	font-size: 14px;
+	font-weight: 300;
+	color: #535461;
+}
+.section2 .sectionContentTitle {
+	padding-top: 15px;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1pt;
+	color: #444053;
+	font-size: 18px;
+	font-weight: 500;
+}
+.section2 .sectionContentSubTitle {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1pt;
+	color: #87a95a;
+	font-size: 14px;
+	font-weight: 350;
+}
+.section2 .sectionContent {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1pt;
+	color: #444053;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 1.8;
+}
+.mainContent {
+	display: block;
+}
+.mainContent .externalResourcesNav .externalResources {
+    background-color: #87a95a;
+    display: inline-block;
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 3%;
+    cursor: pointer;
+    border-radius: 40px;
+}
+.mainContent .externalResourcesNav .externalResources:hover {
+	background-color: #535461;
+}
+.externalResourcesNav .externalResources a {
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgba(255,255,255,1.00);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-decoration: none;
+    letter-spacing: 1pt;
+}
+.stretch {
+	content: '';
+	display: inline-block;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+
+/* Desktops and laptops  */
+@media only screen and (min-width:1025px) {
+/* Header */
+header .profileLogo .logoPlaceholder {
+	float: left;
+	margin-bottom: 50px;
+}
+header .profilePhoto {
+	float: left;
+	clear: both;
+	margin-right: 3%;
+}
+header .profileHeader {
+	text-align: left;
+	padding-top: 10%;
+}
+header .badgeBar .badgeNav {
+	width: 74px;
+	height: 74px;
+	display: inline-block;
+	margin-right: 23px;
+}
+/* Main content sections */
+.section1 .sectionTitleRule, .section2 .sectionTitleRule {
+	width: 22.5%;
+}
+.mainContent .section1 .section1Content {
+	display: block;
+	margin-top: 0%;
+	margin-right: 0%;
+	margin-left: 26%;
+	margin-bottom: 0%;
+	font-family: sans-serif;
+}
+.mainContent .section2 {
+	clear: both;
+}
+.section2 .section2Content {
+	padding: 0px;
+	margin-left: 26%;
+	font-family: sans-serif;
+}
+.mainContent .externalResourcesNav {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	text-align: center;
+	padding-top: 0px;
+	clear: both;
+}
+.mainContent .externalResourcesNav .externalResources {
+	width: 199px;
+	height: 48px;
+}
+
+}

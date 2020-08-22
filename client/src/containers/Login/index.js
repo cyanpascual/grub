@@ -1,27 +1,38 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import '../../assets/hover-login.css';
+import { LoginContext } from '../../context/LoginContext';
+import {Route} from 'react-router-dom'
 
 function App() {
-  return (
-  <center>
-        <div class="hover1" id="register">
-            <div class="hover1" id="reg-logo"><a href="landing.html"><img src="grub-logo.png" alt="Grub"/></a></div>
-            <p id="reg-text">Log in to continue.</p>
-            <div class="hover1" id="reg-form">
-                <form action="/">
-                    <input type="text" id="text-form" name="email" placeholder="email" required/><br/>
-                    <input type="password" id="text-form" name="pw1" placeholder="password" minlength="8" required/><br/>
-                    <input type="submit" value="Log in"/><br/>
-                    <p id="reg-text-3">Forgot password? Click <a href="">here</a> to reset.</p>
-                    <hr id="line"/>
-                    <input type="submitsm1" value="Log in using Facebook"/><br/>
-                    <input type="submitsm2" value="Log in using Google"/>
-                </form>
-                <p id="reg-text-2">Not a member yet? <a href="register.html">Click here to register.</a></p>
+    const {setAuthed,authed, username, password, setUsername,setPassword} = useContext(LoginContext);
+
+    return (
+    <center>
+            <div class="hover1" id="register">
+                <div class="hover1" id="reg-logo"><a href="/Landing">{authed? 'true':'false'}</a></div>
+                <p id="reg-text">Log in to continue.</p>
+                <div class="hover1" id="reg-form">
+
+
+                        <input type="text" id="text-form" name="email" placeholder="email" value={username} onChange={(e)=>{setUsername(e.target.value)}} /><br/>
+                        <input type="password" id="text-form" name="pw1" placeholder="password" minlength="8" value={password} onChange={(e)=>{setPassword(e.target.value)}} /><br/>
+                        <Route render={({ history}) => (
+                        <input type="submit" value="Log in" onClick={() => {
+                            setAuthed(true)
+                            history.push('/Profile') }}>
+                            
+                        </input>
+                        )} />
+        
+                        <p id="reg-text-3">Forgot password? Click <a href="">here</a> to reset.</p>
+                        <hr id="line"/>
+
+        
+                    <p id="reg-text-2">Not a member yet? <a href="Register">Click here to register.</a></p>
+                </div>
             </div>
-        </div>
-    </center>
-  );
+        </center>
+    );
 }
 
 export default App;
