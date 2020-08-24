@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
 import '../../assets/hover-login.css';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { LoginContext } from '../../context/LoginContext';
+import { LoginAndSignUpContext } from '../../context/LoginAndSignUpContext';
 function PrivateRoute ({component: Component, ...rest}) {
-    const {authed} = useContext(LoginContext);
+    const {authed} = useContext(LoginAndSignUpContext);
     return (
       <Route
         {...rest}

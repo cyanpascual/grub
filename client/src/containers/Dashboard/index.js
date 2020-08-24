@@ -1,6 +1,6 @@
 import React,{useContext, useState} from 'react';
 import '../../assets/index.css';
-import { LoginContext } from '../../context/LoginContext';
+
 import Community from './components/Community'
 import Plants from './components/Plants'
 import Start from './components/Start'
@@ -8,7 +8,7 @@ import PremiumPlans from './components/PremiumPlans'
 import { Grid, Card } from '@material-ui/core';
 
 function App() {
-    const {setAuthed,authed, username, password, setUsername,setPassword} = useContext(LoginContext);
+
     const [page,setPage] = useState('Start')
     return (
         <div>

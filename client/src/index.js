@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './containers';
 import * as serviceWorker from './serviceWorker';
-import LoginContextProvider from './context/LoginContext';
+import LoginAndSignUpContextProvider from './context/LoginAndSignUpContext';
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <LoginContextProvider>
+      <LoginAndSignUpContextProvider>
         <App/>
-      </LoginContextProvider>
+      </LoginAndSignUpContextProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

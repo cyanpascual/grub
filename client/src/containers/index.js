@@ -7,7 +7,7 @@ import {
   withRouter,
   browserHistory
 } from "react-router-dom";
-import { LoginContext } from '../context/LoginContext';
+import { LoginAndSignUpContext } from '../context/LoginAndSignUpContext';
 import Login from './Login'
 import Landing from './Landing'
 import Marketplace from './Marketplace'
@@ -20,8 +20,11 @@ import Tutorials from './Tutorials'
 import PrivateRoute from './PrivateRoute'
 import Dashboard from './Dashboard'
 import 'fontsource-roboto';
+
+
+
 function App() {
-  const {authed, setAuthed} = useContext(LoginContext);
+  const {authed, setAuthed} = useContext(LoginAndSignUpContext);
 
   const list_of_public_routes = [
   '/Marketplace',
