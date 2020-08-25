@@ -16,8 +16,6 @@ function App() {
 	<section class="mainContent">
       <div class="productRow">
         <PlantProfile/>
-        <PlantProfile/>
-        <PlantProfile/>
       </div>
 
     </section>
@@ -31,8 +29,8 @@ function App() {
 	<section class="mainContent">
       <div class="productRow">
         <article class="productInfo">
-          <div><img alt="sample" src="200x200.png"/></div>
-          <p class="price">Plant Name</p>
+          <div><img alt="sample" src="sickcarrot.jpg"/></div>
+          <p class="price">Carrot</p>
           <p class="productContent">Disease Type</p>
         </article>
     
@@ -40,7 +38,7 @@ function App() {
 
     </section>
 	</div></center>
-	{/* <div id="welcome"><a href="iframe-5.html">Pest/Disease Identifier</a></div> */}
+	 <div id="welcome"><a href="#">Pest/Disease Identifier</a></div> 
 </body>
     );
 }

@@ -6,20 +6,40 @@ function App() {
 
     var sample_data = [
         {
-            title:'post 1',
-            text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor',
-            tags:['tag 1','tag 2', 'tag 3']
+            "id": 1,
+            "title": "hi",
+            'author':'Cy Pascual',
+            "dateArticle": "2020-08-22",
+            "post": "hello"
         },
         {
-            title:'post 2',
-            text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor',
-            tags:['tag 1','tag 2', ]
+            "id": 2,
+            "title": "Happy birthday, My Son",
+            'author':'Jes Buaron',
+            "dateArticle": "2020-08-22",
+            "post": "Leaves from the vine, falling so slow"
         },
         {
-            title:'post 3',
-            text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor',
-            tags:['tag 1']
+            "id": 3,
+            'author':'Cy Pascual',
+            "title": "This is Madness",
+            "dateArticle": "2020-08-22",
+            "post": "This is SPARTA!"
         },
+        {
+            "id": 4,
+            'author':'Jes Buaron',
+            "title": "Test",
+            "dateArticle": "2020-08-22",
+            "post": "hello"
+        },
+        {
+            "id": 5,
+            'author':'Jes Buaron',
+            "title": "hello",
+            "dateArticle": "2020-08-22",
+            "post": "hello"
+        }
     ]
     
   return (
@@ -28,7 +48,7 @@ function App() {
 	<div id="welcome">FORUM</div>
     <div class="gallery">
     {sample_data.map((post)=>{
-        return(<PostCards title={post.title} text={post.title} tags={post.tags}/>)
+        return(<PostCards title={post.title} text={post.title} author={post.author}/>)
     })}
     </div></center>
 <center><div class="copyright">&copy;2020 - <strong>MILK TEAM</strong></div></center>

@@ -1,17 +1,19 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import '../../assets/index.css';
-
+import {SampleDataContext} from '../../context/SampleDataContext'
 function App() {
+    const {marketData} = useContext(SampleDataContext);
+
   return (
     <body style={{backgroundColor: "#f0f9e4"}}>
 	
     
-        
+
         <center><div id="welcome">MARKETPLACE</div></center>
         
         <center>
         <div id="content">
-        <section class="sidebar"> 
+        <section class="sidebar2"> 
         {/* <!-- This adds a sidebar with 1 searchbox,2 menusets, each with 4 links --> */}
         <input type="text"  id="search" placeholder="search"/>
         <div id="menubar">
@@ -47,74 +49,43 @@ function App() {
         <section class="mainContent">
         <div class="productRow">
         {/* <!-- Each individual product description --> */}
-            <article class="productInfo">
-                <div><img alt="sample" src="200x200.png"/></div>
-                <p class="price">P50/kg</p>
-                <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98% </p>
-                <input type="button" name="button" value="Buy" class="buyButton"/>
-            </article>
-            <article class="productInfo">
-            {/* <!-- Each individual product description --></article> */}
-            <div><img alt="sample" src="200x200.png"/></div>
-            <p class="price">P50/kg</p>
-            <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98%</p>
-            <input type="button" name="button" value="Buy" class="buyButton"/>
-            </article>
-            <article class="productInfo">
-            {/* <!-- Each individual product description --> */}
-            <div><img alt="sample" src="200x200.png"/></div>
-            <p class="price">P50/kg</p>
-            <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98%</p>
-            <input type="button" name="button" value="Buy" class="buyButton"/>
-            </article>
+        {/* {
+         "id": 1,
+         "price": "70.00",
+         "product": "Red Onions",
+         "hdate": "2020-08-24",
+         "prod_pic": 'violet.jpg'
+     } */}
+        {marketData.map((post)=>{
+            if([1,2,3].includes(post.id)){
+                return(
+                    <article class="productInfo">
+                        <div><img alt="sample" src={post.prod_pic}/></div>
+                        <p class="price">P{post.price}/kg</p>
+                        <p class="productContent">Product <br/> Harvest Date: {post.hdate}</p>
+                        <input type="button" name="button" value="Buy" class="buyButton"/>
+                    </article>)
+            } else{return null}
+        })}
+
+           
         </div>
         <div class="productRow"> 
-            {/* <!-- Each product row contains info of 3 elements --> */}
-            <article class="productInfo"> 
-            {/* <!-- Each individual product description --> */}
-            <div><img alt="sample" src="200x200.png"/></div>
-            <p class="price">P50/kg</p>
-            <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98%</p>
-            <input type="button" name="button" value="Buy" class="buyButton"/>
-            </article>
-            <article class="productInfo"> 
-            {/* <!-- Each individual product description --> */}
-            <div><img alt="sample" src="200x200.png"/></div>
-            <p class="price">P50/kg</p>
-            <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98%</p>
-            <input type="button" name="button" value="Buy" class="buyButton"/>
-            </article>
-            <article class="productInfo">
-            {/* <!-- Each individual product description --> */}
-            <div><img alt="sample" src="200x200.png"/></div>
-            <p class="price">P50</p>
-            <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98%</p>
-            <input type="button" name="button" value="Buy" class="buyButton"/>
-            </article>
+        {marketData.map((post)=>{
+            if( [4,5].includes(post.id)){
+                return(
+                    <article class="productInfo">
+                        <div><img alt="sample" src={post.prod_pic}/></div>
+                        <p class="price">P{post.price}/kg</p>
+                        <p class="productContent">Product <br/> Harvest Date: {post.hdate}</p>
+                        <input type="button" name="button" value="Buy" class="buyButton"/>
+                    </article>)
+            } else{return null}
+        })}
+
         </div>
-        <div class="productRow">
-            <article class="productInfo"> 
-            {/* <!-- Each individual product description --> */}
-            <div><img alt="sample" src="200x200.png"/></div>
-            <p class="price">P50/kg</p>
-            <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98%</p>
-            <input type="button" name="button" value="Buy" class="buyButton"/>
-            </article>
-            <article class="productInfo">
-            {/* <!-- Each individual product description --> */}
-            <div><img alt="sample" src="200x200.png"/></div>
-            <p class="price">P50/kg</p>
-            <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98%</p>
-            <input type="button" name="button" value="Buy" class="buyButton"/>
-            </article>
-            <article class="productInfo">
-            {/* <!-- Each individual product description --> */}
-            <div><img alt="sample" src="200x200.png"/></div>
-            <p class="price">P50/kg</p>
-            <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98%</p>
-            <input type="button" name="button" value="Buy" class="buyButton"/>
-            </article>
-        </div>
+       
+
         </section>
         </div></center>
             <center><div class="copyright">&copy;2020 - <strong>MILK TEAM</strong></div></center>

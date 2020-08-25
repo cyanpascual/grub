@@ -1,10 +1,12 @@
 import React,{useContext, useState} from 'react';
 import '../../assets/hover-login.css';
 import { LoginAndSignUpContext } from '../../context/LoginAndSignUpContext';
+import {CurrentUserContext} from '../../context/CurrentUserContext';
 import {Route} from 'react-router-dom'
 import app from "../../fire";
 function App() {
     const {setAuthed,authed, username} = useContext(LoginAndSignUpContext);
+
     var [email, setEmail] = useState('')
 	var [password, setPassword] = useState('')
 
@@ -22,13 +24,16 @@ function App() {
                         <Route render={({ history}) => (
                         <input type="submit" value="Log in" onClick={async event => {
                             event.preventDefault();
-                        
                             try {
                                 await app
                                 .auth()
-                                .signInWithEmailAndPassword(email, password);
-                                setAuthed(true)
-                                history.push('/Profile')
+                                .signInWithEmailAndPassword(email, password)
+                                .then(()=>{
+
+                                    setAuthed(true)
+                                    history.push('/Profile')
+                                })
+                                
                             } catch (error) {
                                 alert(error);
                             }

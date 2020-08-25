@@ -40,7 +40,7 @@ function App() {
 
   return (
     <Router>
-      {list_of_public_routes.includes(window.location.pathname) ? (
+      {authed ? (
       <header class="main-h1" id="h1">
       <NavLink to="Landing">{<img src="grub-logo.png" alt=""/>}</NavLink>
       <div id="menu">
@@ -63,7 +63,7 @@ function App() {
             <button class="dropbtn">SHOP</button>
             <div class="dd3-cont">
               <NavLink to="Marketplace" onClick={()=>{setAuthed(true)}}>Marketplace</NavLink>
-              <NavLink to="Orders" onClick={()=>{setAuthed(true)}}>My orders</NavLink>
+              <NavLink to="Orders" onClick={()=>{setAuthed(true)}}>My Store</NavLink>
             </div>
           </div>
         </ul>

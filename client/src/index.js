@@ -4,13 +4,17 @@ import './index.css';
 import App from './containers';
 import * as serviceWorker from './serviceWorker';
 import LoginAndSignUpContextProvider from './context/LoginAndSignUpContext';
+//import CurrentUserContextProvider from './context/CurrentUserContext';
+import SampleDataContextProvider from './context/SampleDataContext';
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <LoginAndSignUpContextProvider>
-        <App/>
+        <SampleDataContextProvider>
+          <App/>
+        </SampleDataContextProvider>
       </LoginAndSignUpContextProvider>
     </BrowserRouter>
   </React.StrictMode>,

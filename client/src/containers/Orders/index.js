@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import '../../assets/index.css';
-
+import {SampleDataContext} from '../../context/SampleDataContext'
 function App() {
+  const {marketData} = useContext(SampleDataContext);
   return (
     <body>
 	
@@ -16,7 +17,7 @@ function App() {
       <div id="menubar">
         <nav class="menu-mk">
         {/* <!-- Title for menuset 1 --> */}
-          <h2>My orders </h2>
+          <h2>My Store</h2>
           <hr/>
           <ul>
             {/* <!-- List of links under menuset 1 --> */}
@@ -46,51 +47,19 @@ function App() {
 	<section class="mainContent">
       <div class="productRow">
           {/* <!-- Each product row contains info of 3 elements --> */}
-        <article class="productInfo">
-            {/* <!-- Each individual product description --> */}
-          <div><img alt="sample" src="200x200.png"/></div>
-          <p class="price">P50/kg</p>
-          <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98% </p>
-          <input type="button" name="button" value="Reorder" class="buyButton"/>
-        </article>
-        <article class="productInfo">
-            {/* <!-- Each individual product description --> */}
-          <div><img alt="sample" src="200x200.png"/></div>
-          <p class="price">P50/kg</p>
-          <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98%</p>
-          <input type="button" name="button" value="Reorder" class="buyButton"/>
-        </article>
-        <article class="productInfo"> 
-        {/* <!-- Each individual product description --> */}
-          <div><img alt="sample" src="200x200.png"/></div>
-          <p class="price">P50/kg</p>
-          <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98%</p>
-          <input type="button" name="button" value="Reorder" class="buyButton"/>
-        </article>
-      </div>
-      <div class="productRow"> 
-        {/* <!-- Each product row contains info of 3 elements --> */}
-        <article class="productInfo"> 
-        {/* <!-- Each individual product description --> */}
-          <div><img alt="sample" src="200x200.png"/></div>
-          <p class="price">P50/kg</p>
-          <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98%</p>
-          <input type="button" name="button" value="Reorder" class="buyButton"/>
-        </article>
-        <article class="productInfo"> 
-        {/* <!-- Each individual product description --> */}
-          <div><img alt="sample" src="200x200.png"/></div>
-          <p class="price">P50/kg</p>
-          <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98%</p>
-          <input type="button" name="button" value="Reorder" class="buyButton"/>
-        </article>
-        <article class="productInfo">
-            {/* <!-- Each individual product description --> */}
-          <div><img alt="sample" src="200x200.png"/></div>
-          <p class="price">P50</p>
-          <p class="productContent">Product <br/> Harvest Date: 21 Aug 2020 <br/>Seller Rating: 98%</p>
-          <input type="button" name="button" value="Reorder" class="buyButton"/>
-        </article>
+
+          {marketData.map((post)=>{
+            if([1,5].includes(post.id)){
+                return(
+                    <article class="productInfo">
+                        <div><img alt="sample" src={post.prod_pic}/></div>
+                        <p class="price">P{post.price}/kg</p>
+                        <p class="productContent">Product <br/> Harvest Date: {post.hdate}</p>
+                        <input type="button" name="button" value="Edit" class="buyButton"/>
+                    </article>)
+            } else{return null}
+        })}
+       
       </div>
 
     </section>

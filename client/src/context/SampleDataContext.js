@@ -7,99 +7,119 @@ const SampleDataContextProvider = (props) => {
         {
             "id": 1,
             "title": "hi",
-            "dateArticle": "2020-08-22T10:13:40.495882Z",
+            'author':'Cy Pascual',
+            "dateArticle": "2020-08-22",
             "post": "hello"
         },
         {
             "id": 2,
             "title": "Happy birthday, My Son",
-            "dateArticle": "2020-08-22T10:25:40.386658Z",
+            'author':'Jes Buaron',
+            "dateArticle": "2020-08-22",
             "post": "Leaves from the vine, falling so slow"
         },
         {
             "id": 3,
+            'author':'Cy Pascual',
             "title": "This is Madness",
-            "dateArticle": "2020-08-22T10:25:45.887435Z",
+            "dateArticle": "2020-08-22",
             "post": "This is SPARTA!"
         },
         {
             "id": 4,
+            'author':'Jes Buaron',
             "title": "Test",
-            "dateArticle": "2020-08-22T10:25:50.818381Z",
+            "dateArticle": "2020-08-22",
             "post": "hello"
         },
         {
             "id": 5,
+            'author':'Jes Buaron',
             "title": "hello",
-            "dateArticle": "2020-08-22T10:25:55.578107Z",
+            "dateArticle": "2020-08-22",
             "post": "hello"
         }
     ]);
   const [profileData, setProfileData] = useState([
-    {
-        "id": 1,
-        "uName": "kyogrejotho",
-        "pWord": "dragon123",
-        "email": "d@g.com",
-        "dateStarted": "2020-08-22",
-        "description": "Farmer1",
-        "badges": "badge1,badge2,badge3",
-        "reviews": "Great",
-        "plants": "Cabbage",
-        "postIDs": 1,
-        "memberSince": "2020-08-22"
+    {  
+        'id': 1,
+        "email": 'notcyanpascual@gmail.com',
+        'name':'Cy Pascual',
+        "description": "I like plants. I like green plants. I like vegetables. I like green vegetables.",
+        'interest':{
+            'planting_experience':'1 year',
+            "plants": 'Carrots',
+            'interested_in':'Green plants',
+            "member_since": "2020-08-25"
+        },
+        "badges": [1,2],
+        "postIDs": [1,3],
+        'image':null,
+        'community':'Milk Team'
     },
     {
-        "id": 2,
-        "uName": "jdarb",
-        "pWord": "dragon",
-        "email": "dragon@dragon.com",
-        "dateStarted": "2020-08-22",
-        "description": "I like dragons",
-        "badges": "badge 3",
-        "reviews": "Not enough dragons",
-        "plants": "Lettuce, carrots",
-        "postIDs": 2,
-        "memberSince": "2020-08-22"
+        'id':2,
+        "email": 'notjesbuaron@gmail.com',
+        'name':'Jes Buaron',
+        "description": "Im Jes.",
+        'interest':{
+            'planting_experience':'',
+            "plants": 'Cabbage',
+            'interested_in':'',
+            "member_since": "2020-08-25"
+        },
+        "badges": [1,3],
+        "postIDs": [2,4,5],
+        'image':null,
+        'community':''
     },
     {
-        "id": 3,
-        "uName": "slgo",
-        "pWord": "esteban",
-        "email": "slgo@slg.com",
-        "dateStarted": "2020-08-22",
-        "description": "Numbah One",
-        "badges": "badge 1, badge 3",
-        "reviews": "Atin to",
-        "plants": "chinese onion, chinese cabbage",
-        "postIDs": 4,
-        "memberSince": "2020-08-22"
+        'id':3,
+        "email": '',
+        'name':'Andrea Onglao',
+        "description": "Im Andrea",
+        'interest':{
+            'planting_experience':'',
+            "plants": 'Radish',
+            'interested_in':'',
+            "member_since": "2020-08-25"
+        },
+        "badges": [1,3],
+        "postIDs": [-1],
+        'image':null,
+        'community':''
     },
     {
-        "id": 4,
-        "uName": "cashews",
-        "pWord": "nuts",
-        "email": "cashew@nuts.com",
-        "dateStarted": "2020-08-22",
-        "description": "I hate cashews",
-        "badges": "badge 1",
-        "reviews": "Too expensive",
-        "plants": "bell peppers",
-        "postIDs": 5,
-        "memberSince": "2020-08-22"
+        'id':3,
+        "email": '',
+        'name':'Thea ',
+        "description": "",
+        'interest':{
+            'planting_experience':'',
+            "plants": 'Pepper',
+            'interested_in':'',
+            "member_since": "2020-08-25"
+        },
+        "badges": [4],
+        "postIDs": [-1],
+        'image':null,
+        'community':''
     },
     {
-        "id": 5,
-        "uName": "Taylor",
-        "pWord": "Series",
-        "email": "taylor@swift.com",
-        "dateStarted": "2020-08-22",
-        "description": "Fearless",
-        "badges": "badge 1,badge 2, badge 3",
-        "reviews": "Bestseller",
-        "plants": "Red Onion",
-        "postIDs": 6,
-        "memberSince": "2020-08-22"
+        'id':4,
+        "email": '',
+        'name':'Steve',
+        "description": "",
+        'interest':{
+            'planting_experience':'Onions',
+            "plants": 'Onions',
+            'interested_in':'',
+            "member_since": "2020-08-25"
+        },
+        "badges": [3],
+        "postIDs": [-1],
+        'image':null,
+        'community':''
     }
 ]);
   const [ordersData, setOrdersData] = useState([
@@ -135,12 +155,59 @@ const SampleDataContextProvider = (props) => {
     }
 ]);
 
+    const [marketData,setMarketData] = useState([
+        {
+            "id": 1,
+            "price": "70.00",
+            "product": "Red Onions",
+            "hdate": "2020-08-24",
+            "prod_pic": 'violet.jpg'
+        },
+        {
+            "id": 2,
+            "price": "50.00",
+            "product": "Cabbage",
+            "hdate": "2020-08-24",
+            "prod_pic": 'green2.png'
+        },
+        {
+            "id": 3,
+            "price": "140.00",
+            "product": "Radish",
+            "hdate": "2020-08-24",
+            "prod_pic": 'offwhite.jpg'
+        },
+        {
+            "id": 4,
+            "price": "400.00",
+            "product": "Red Pepper",
+            "hdate": "2020-08-24",
+            "prod_pic": 'red.jpg'
+        },
+        {
+            "id": 5,
+            "price": "80.00",
+            "product": "Lettuce",
+            "hdate": "2020-08-24",
+            "prod_pic": 'green.png'
+        }
+    ])
+
+    const [communityData, setCommunityData] = useState([
+        {
+            'name':'Milk Team',
+            "member_IDs": "1, 2, 3",
+            "lat": "14.345700",
+            "longi": "120.584200"
+        }
+    ])
+
 
   return(
-    <SampleDataContext.Provider value={{ ordersData, articleData, profileData}}>
+    <SampleDataContext.Provider value={{ setProfileData, ordersData, articleData, profileData,marketData,communityData}}>
       {props.children}
     </SampleDataContext.Provider>
   );
 }
 
-export default LoginContextProvider;
+export default SampleDataContextProvider;

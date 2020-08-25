@@ -26,26 +26,33 @@ return (
 					try {
 						await app
 						.auth()
-						.createUserWithEmailAndPassword(email, password);
-						app
-						.database()
-						.ref('profiles')
-						.push()
-						.set({
-							"email": email,
-							'name':'',
-							"description": "",
-							'interest':{
-								'planting_experience':'',
-								"plants": [-1],
-								'interested_in':'',
-								"member_since": "2020-08-25"
-							},
-							"badges": [-1],
-							"postIDs": [-1],
-							'image':null
-						})
-						history.push('/Login')
+						.createUserWithEmailAndPassword(email, password)
+						.then(()=>{
+							var userID = app.auth().currentUser.uid
+							app
+							.database()
+							.ref('profiles/'+userID)
+							.set({
+								"email": email,
+								'name':'',
+								"description": "",
+								'interest':{
+									'planting_experience':'',
+									"plants": [-1],
+									'interested_in':'',
+									"member_since": "2020-08-25"
+								},
+								"badges": [-1],
+								"postIDs": [-1],
+								'image':null,
+								'community':''
+							})
+							history.push('/Login')
+							
+						}
+
+						)
+						
 					} catch (error) {
 						alert(error);
 					}
